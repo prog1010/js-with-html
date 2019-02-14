@@ -1,8 +1,18 @@
+console.log("Script is loading");
+console.log(document.getElementById('btn'));
+
 function onButtonClicked() {
-  console.log("the button was clicked");
+  var input = document.querySelector('#textinput');
+  var textarea = document.querySelector('textarea');
+  textarea.value = textarea.value + " " + input.value;
+  input.value = '';
 }
 
-window.addEventListener("DOMContentLoaded", function() {
-  var button = document.querySelector("#btn");
-  button.addEventListener("click", onButtonClicked);
-});
+
+function onContentLoaded() {
+	console.log("DOM is loaded");
+	var button = document.querySelector("#btn");
+	button.addEventListener("click", onButtonClicked);
+}
+
+window.addEventListener("DOMContentLoaded", onContentLoaded);
